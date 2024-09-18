@@ -10,11 +10,12 @@ char *moving;
 
 short int number1,number2;
 bool take_number1 = false,take_number2 = false, f_flag = false , sec_number_zero = false, isdigit_check_number1 = true, isdigit_check_number2 = true,otobrazh = false;
+bool del_flag = false;
 
 void Calc() {
 
     printw("%s", "Calculator by Tikhanov Oleg\n");
-    printw("%s", "ver 0.95\n");
+    printw("%s", "ver 0.98\n");
     printw("%s", "\n");
     printw("%s", "Перед использованием прочитайте инструкцию п.7\n");
     printw("%s", "-----------------\n");
@@ -57,18 +58,27 @@ void Calc() {
         }
 
 
-
-        if (otobrazh == true && i == 8 && f_flag == true && take_number1 == true && sec_number_zero == true && ((pos_count == 5 && n_button == 10) || n_button == 54)) {
-            printw("%s", "Делить на 0 нельзя!");
-
+        if (i == 8 && otobrazh == true && f_flag == true && take_number1 == true && take_number2 == true) {
+            if (sec_number_zero == true && del_flag == true) {
+                printw("%s", "Делить на 0 нельзя!");
+            }
+            else {
+                printw("%s %d %s %d = %d", "Результат:", number1, moving, number2, itog);
+            }
         }
+
+
+        // if (otobrazh == true && i == 8 && f_flag == true && take_number1 == true && sec_number_zero == true && ((pos_count == 5 && n_button == 10) || n_button == 54)) {
+        //     printw("%s", "Делить на 0 нельзя!");
+        //
+        // }
 
             // end check
 
 
-         else if (i == 8 && f_flag == true && take_number1 == true && take_number2 == true && otobrazh == true) {
-            printw("%s %d %s %d = %d", "Результат:", number1, moving, number2, itog);
-        }
+        //  else if (i == 8 && f_flag == true && take_number1 == true && take_number2 == true && otobrazh == true) {
+        //     printw("%s %d %s %d = %d", "Результат:", number1, moving, number2, itog);
+        // }
     }
 }
 
@@ -192,6 +202,7 @@ int main() {
 
         //Summ
         if ((pos_count == 2 && n_button == 10) || n_button == 51) {
+            del_flag = false;
             otobrazh = true;
             moving = "+";
             f_flag = true;
@@ -203,6 +214,7 @@ int main() {
 
         //Vichet
         if ((pos_count == 3 && n_button == 10) || n_button == 52) {
+            del_flag = false;
             otobrazh = true;
             moving = "-";
             f_flag = true;
@@ -213,6 +225,7 @@ int main() {
         }
         //Ymnozh
         if ((pos_count == 4 && n_button == 10) || n_button == 53) {
+            del_flag = false;
             otobrazh = true;
             moving = "*";
             f_flag = true;
@@ -224,6 +237,7 @@ int main() {
 
         //del
         if ((pos_count == 5 && n_button == 10) || n_button == 54) {
+            del_flag = true;
             otobrazh = true;
             moving = "/";
             f_flag = true;
@@ -233,12 +247,13 @@ int main() {
             Calc(pos_count);
         }
 
+        //info
         if ((pos_count == 6 && n_button == 10) || n_button == 55) {
             clear();
             pos_count = 6;
             otobrazh = false;
             printw("%s", "Calculator by Tikhanov Oleg\n");
-            printw("%s", "ver 0.95\n");
+            printw("%s", "ver 0.98\n");
             printw("%s", "\n");
             printw("%s", "https://github.com/bad1and/KurvaCalc\n");
             printw("%s", "\n");
