@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics"
+					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics"
 				}
 			],
 			"language" : "C",
@@ -75,12 +75,12 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd",
+				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libcurses.tbd",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libform.tbd",
+				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libform.tbd",
 				"role" : "libraries"
 			}
 		],

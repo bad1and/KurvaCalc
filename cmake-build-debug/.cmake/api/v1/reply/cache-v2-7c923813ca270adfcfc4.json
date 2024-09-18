@@ -675,7 +675,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1035,7 +1035,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libcurses.tbd"
 		},
 		{
 			"name" : "CURSES_FORM_LIBRARY",
@@ -1051,7 +1051,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libform.tbd"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libform.tbd"
 		},
 		{
 			"name" : "CURSES_INCLUDE_PATH",
@@ -1067,7 +1067,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include"
 		},
 		{
 			"name" : "CURSES_NCURSES_LIBRARY",
@@ -1083,7 +1083,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libncurses.tbd"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libncurses.tbd"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Curses",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd][/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include][v()]"
+			"value" : "[/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libcurses.tbd][/Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include][v()]"
 		},
 		{
 			"name" : "PKG_CONFIG_ARGN",

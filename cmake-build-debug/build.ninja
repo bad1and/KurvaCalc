@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_calc: phony || .
 
 build CMakeFiles/calc.dir/main.c.o: C_COMPILER__calc_unscanned_Debug /Users/oleg/myfiles/PROJEKTS$ C++/calc/main.c || cmake_object_order_depends_target_calc
   DEP_FILE = CMakeFiles/calc.dir/main.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/calc.dir
   OBJECT_FILE_DIR = CMakeFiles/calc.dir
 
@@ -63,9 +63,9 @@ build CMakeFiles/calc.dir/main.c.o: C_COMPILER__calc_unscanned_Debug /Users/oleg
 #############################################
 # Link the executable calc
 
-build calc: C_EXECUTABLE_LINKER__calc_Debug CMakeFiles/calc.dir/main.c.o | /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libform.tbd
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
-  LINK_LIBRARIES = /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libform.tbd
+build calc: C_EXECUTABLE_LINKER__calc_Debug CMakeFiles/calc.dir/main.c.o | /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libcurses.tbd /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libform.tbd
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
+  LINK_LIBRARIES = /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libcurses.tbd  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/lib/libform.tbd
   OBJECT_DIR = CMakeFiles/calc.dir
   POST_BUILD = :
   PRE_LINK = :

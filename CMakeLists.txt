@@ -7,3 +7,4 @@ include_directories(${CURSES_INCLUDE_DIR})
 #add_executable(calc test.c)
 add_executable(calc main.c)
 target_link_libraries(calc ${CURSES_LIBRARIES})
+
