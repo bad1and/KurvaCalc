@@ -15,6 +15,7 @@ void Calc() {
 
     printw("%s", "Calculator by Tikhanov Oleg\n");
     printw("%s", "ver 0.95\n");
+    printw("%s", "www.github.com/bad1and/KurvaCalc\n");
     printw("%s", "Для завершения, дважды нажать ESC в главном меню\n");
     printw("%s", "-----------------\n");
     printw("%s", "\n");
@@ -108,6 +109,7 @@ int main() {
 
             char digit1[100];
             int x = 0;
+            bool isNumber1 = true;
 
             scanw("%s", digit1);
 
@@ -117,13 +119,13 @@ int main() {
 
             while (digit1[x] != '\0') {
                 if (!isdigit(digit1[x])) {
-                    isdigit_check_number1 = false;
+                    isNumber1 = false;
                     break;
                 }
                 x = x + 1;
             }
 
-            if (isdigit_check_number1 == true) {
+            if (isNumber1 == true) {
                 number1 = atoi(digit1); //atoi - to int
                 isdigit_check_number1 = true;
                 take_number1 = true;
@@ -147,6 +149,7 @@ int main() {
 
             char digit2[100];
             int y = 0;
+            bool isNumber2 = true;
 
             scanw("%s", digit2);
 
@@ -156,13 +159,13 @@ int main() {
 
             while (digit2[y] != '\0') {
                 if (!isdigit(digit2[y])) {
-                    isdigit_check_number2 = false;
+                    isNumber2 = false;
                     break;
                 }
                 y = y + 1;
             }
 
-            if (isdigit_check_number2 == true) {
+            if (isNumber2 == true) {
                 number2 = atoi(digit2); //atoi - to int
                 isdigit_check_number2 = true;
                 take_number2 = true;
