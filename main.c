@@ -58,7 +58,7 @@ void Calc() {
 
 
 
-        if (otobrazh == true && i == 8 && f_flag == true && take_number1 == true && sec_number_zero == true && (n_button == 10 || n_button == 54)) {
+        if (otobrazh == true && i == 8 && f_flag == true && take_number1 == true && sec_number_zero == true && ((pos_count == 5 && n_button == 10) || n_button == 54)) {
             printw("%s", "Делить на 0 нельзя!");
 
         }
