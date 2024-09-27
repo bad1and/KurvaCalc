@@ -4,18 +4,19 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-int n_button, itog;
-int pos_count = 0;
+int n_button;
+int position = 0;
 char *moving;
 
-short int number1,number2;
-bool take_number1 = false,take_number2 = false, f_flag = false , sec_number_zero = false, isdigit_check_number1 = true, isdigit_check_number2 = true,otobrazh = false;
-bool del_flag = false;
+long long int number1,number2;
+long long int itog;
+bool take_number1 = false,take_number2 = false, f_flag = false , sec_number_zero = false, isdigit_check_number1 = true, isdigit_check_number2 = true,otobrazh = false, del_flag = false;
+
 
 void Calc() {
 
     printw("%s", "Calculator by Tikhanov Oleg\n");
-    printw("%s", "ver 0.98\n");
+    printw("%s", "ver 1.0\n");
     printw("%s", "\n");
     printw("%s", "Перед использованием прочитайте инструкцию п.7\n");
     printw("%s", "-----------------\n");
@@ -34,7 +35,7 @@ void Calc() {
     };
 
     for (int i = 0; i <= 8; ++i) {
-        if (i == pos_count) {
+        if (i == position) {
             printw("%s  %s\n", screen[i], "<---");
         } else {
             printw("%s\n", screen[i]);
@@ -63,22 +64,10 @@ void Calc() {
                 printw("%s", "Делить на 0 нельзя!");
             }
             else {
-                printw("%s %d %s %d = %d", "Результат:", number1, moving, number2, itog);
+                printw("%s %d %s %d = %lld", "Результат:", number1, moving, number2, itog);
             }
         }
-
-
-        // if (otobrazh == true && i == 8 && f_flag == true && take_number1 == true && sec_number_zero == true && ((pos_count == 5 && n_button == 10) || n_button == 54)) {
-        //     printw("%s", "Делить на 0 нельзя!");
-        //
-        // }
-
-            // end check
-
-
-        //  else if (i == 8 && f_flag == true && take_number1 == true && take_number2 == true && otobrazh == true) {
-        //     printw("%s %d %s %d = %d", "Результат:", number1, moving, number2, itog);
-        // }
+        
     }
 }
 
@@ -86,7 +75,7 @@ int main() {
     setlocale(LC_ALL, "");
     initscr();
     while (true) {
-        Calc(pos_count);
+        Calc(position);
 
         n_button = getch();
         if (n_button == 27) {
@@ -97,15 +86,15 @@ int main() {
                 n_button = getch();
                 if (n_button == 65) {
                     // up
-                    pos_count = pos_count - 1;
-                    if (pos_count < 0) {
-                        pos_count = 7;
+                    position = position - 1;
+                    if (position < 0) {
+                        position = 7;
                     }
                 } else if (n_button == 66) {
                     // down
-                    pos_count = pos_count + 1;
-                    if (pos_count > 7) {
-                        pos_count = 0;
+                    position = position + 1;
+                    if (position > 7) {
+                        position = 0;
                     }
                 }
             }
@@ -114,7 +103,7 @@ int main() {
 
         // 49 - 55; 1 - 7
         //Enter A
-        if ((pos_count == 0 && n_button == 10) || n_button == 49) {
+        if ((position == 0 && n_button == 10) || n_button == 49) {
             clear();
             otobrazh = false;
             printw("%s", "Введите число А: ");
@@ -139,8 +128,14 @@ int main() {
 
             if (isNumber1 == true) {
                 number1 = atoi(digit1); //atoi - to int
-                isdigit_check_number1 = true;
-                take_number1 = true;
+                if (-65535<=number1 && number1<=65535) {
+                    isdigit_check_number1 = true;
+                    take_number1 = true;
+                }
+                else {
+                    isdigit_check_number1 = false;
+                    take_number1 = false;
+                }
             }
             else {
                 isdigit_check_number1 = false;
@@ -149,13 +144,13 @@ int main() {
 
             // scanw("%hu\n", &number1);
             clear();
-            pos_count = 0;
-            Calc(pos_count);
+            position = 0;
+            Calc(position);
 
         }
 
         //Enter B
-        if ((pos_count == 1 && n_button == 10) || n_button == 50) {
+        if ((position == 1 && n_button == 10) || n_button == 50) {
             clear();
             otobrazh = false;
             printw("%s", "Введите число Б: ");
@@ -180,14 +175,21 @@ int main() {
 
             if (isNumber2 == true) {
                 number2 = atoi(digit2); //atoi - to int
-                isdigit_check_number2 = true;
-                take_number2 = true;
-                if (number2 == 0) {
+                if (-65535<= number2 && number2<=65535) {
+                    isdigit_check_number2 = true;
+                    take_number2 = true;
+                    if (number2 == 0) {
                         sec_number_zero = true;
                     }
                     else {
                         sec_number_zero = false;
                     }
+                }
+                else {
+                    isdigit_check_number2 = false;
+                    take_number2 = false;
+                }
+
             }
             else {
                 isdigit_check_number2 = false;
@@ -195,72 +197,72 @@ int main() {
             }
 
             clear();
-            pos_count = 1;
-            Calc(pos_count);
+            position = 1;
+            Calc(position);
 
         }
 
         //Summ
-        if ((pos_count == 2 && n_button == 10) || n_button == 51) {
+        if ((position == 2 && n_button == 10) || n_button == 51) {
             del_flag = false;
             otobrazh = true;
             moving = "+";
             f_flag = true;
             itog = number1 + number2;
             clear();
-            pos_count = 2;
-            Calc(pos_count);
+            position = 2;
+            Calc(position);
         }
 
         //Vichet
-        if ((pos_count == 3 && n_button == 10) || n_button == 52) {
+        if ((position == 3 && n_button == 10) || n_button == 52) {
             del_flag = false;
             otobrazh = true;
             moving = "-";
             f_flag = true;
             itog = number1 - number2;
             clear();
-            pos_count = 3;
-            Calc(pos_count);
+            position = 3;
+            Calc(position);
         }
         //Ymnozh
-        if ((pos_count == 4 && n_button == 10) || n_button == 53) {
+        if ((position == 4 && n_button == 10) || n_button == 53) {
             del_flag = false;
             otobrazh = true;
             moving = "*";
             f_flag = true;
             itog = number1 * number2;
             clear();
-            pos_count = 4;
-            Calc(pos_count);
+            position = 4;
+            Calc(position);
         }
 
         //del
-        if ((pos_count == 5 && n_button == 10) || n_button == 54) {
+        if ((position == 5 && n_button == 10) || n_button == 54) {
             del_flag = true;
             otobrazh = true;
             moving = "/";
             f_flag = true;
             itog = number1 / number2;
             clear();
-            pos_count = 5;
-            Calc(pos_count);
+            position = 5;
+            Calc(position);
         }
 
         //info
-        if ((pos_count == 6 && n_button == 10) || n_button == 55) {
+        if ((position == 6 && n_button == 10) || n_button == 55) {
             clear();
-            pos_count = 6;
+            position = 6;
             otobrazh = false;
             printw("%s", "Calculator by Tikhanov Oleg\n");
-            printw("%s", "ver 0.98\n");
+            printw("%s", "ver 1.0\n");
             printw("%s", "\n");
             printw("%s", "https://github.com/bad1and/KurvaCalc\n");
             printw("%s", "\n");
             printw("%s", "Калькулятор принимает на ввод только целые числа.\n");
             printw("%s", "Вводимые числа должны быть в диапазоне short int.\n");
             printw("%s", "Калькулятор выводит только целые числа.\n");
-            printw("%s", "Вывод чисел осуществляется в диапазоне int.\n");
+            // printw("%s", "Вывод чисел осуществляется в диапазоне int.\n");
             printw("%s", "\n");
             printw("%s", "Для выхода из программы в данном меню нажмите ESC.\n");
             printw("%s", "Для выхода из программы в главном меню дважды нажмите ESC.\n");
@@ -269,12 +271,12 @@ int main() {
             n_button = getch();
             if (n_button != 27) {
                 clear();
-                Calc(pos_count);
+                Calc(position);
             }
         }
 
         //close calc
-        if ((pos_count == 7 && n_button == 10) || n_button == 56 || n_button == 27) {
+        if ((position == 7 && n_button == 10) || n_button == 56 || n_button == 27) {
             break;
         }
         clear();

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/oleg/myfiles/PROJEKTS C++/calc/cmake-build-debug"
+			"value" : "/Users/oleg/myfiles/\u041b\u042d\u0422\u0418/\u041f\u0440\u043e\u0433\u0430/\u041b\u0430\u0431\u044b/KurvaCalc/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -383,7 +383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/oleg/myfiles/PROJEKTS C++/calc/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/oleg/myfiles/\u041b\u042d\u0422\u0418/\u041f\u0440\u043e\u0433\u0430/\u041b\u0430\u0431\u044b/KurvaCalc/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/oleg/myfiles/PROJEKTS C++/calc"
+			"value" : "/Users/oleg/myfiles/\u041b\u042d\u0422\u0418/\u041f\u0440\u043e\u0433\u0430/\u041b\u0430\u0431\u044b/KurvaCalc"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/oleg/myfiles/PROJEKTS C++/calc/cmake-build-debug"
+			"value" : "/Users/oleg/myfiles/\u041b\u042d\u0422\u0418/\u041f\u0440\u043e\u0433\u0430/\u041b\u0430\u0431\u044b/KurvaCalc/cmake-build-debug"
 		},
 		{
 			"name" : "calc_IS_TOP_LEVEL",
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/oleg/myfiles/PROJEKTS C++/calc"
+			"value" : "/Users/oleg/myfiles/\u041b\u042d\u0422\u0418/\u041f\u0440\u043e\u0433\u0430/\u041b\u0430\u0431\u044b/KurvaCalc"
 		}
 	],
 	"kind" : "cache",
